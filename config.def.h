@@ -11,11 +11,11 @@ static const int vertpad            = 10;       /* vertical padding of bar */
 static const int sidepad            = 20;       /* horizontal padding of bar */
 static const char *fonts[]          = { "Source Code Pro:size=20" };
 static const char dmenufont[]       = "Source Code Pro:size=20";
-static const char col_gray1[]       = "#500606";/*"#222222";*/
+static const char col_gray1[]       = "#000000"; /*"#500606";"#222222";*/
 static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#d45f29";/*"#005577";*/
+static const char col_gray3[]       = "#98662d"; /*"#bbbbbb";*/
+static const char col_gray4[]       = "#000000";
+static const char col_cyan[]        = "#98662d";/*"#d45f29";"#005577";*/
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -24,7 +24,7 @@ static const char *colors[][3]      = {
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const char *defaulttagapps[] = { "st", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL };
+static const char *defaulttagapps[] = { "st", "firefox", "xournalpp", "zathura", NULL, NULL, NULL, NULL, NULL };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -72,6 +72,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+        { MODKEY,                       XK_s,      spawndefault,   {0} },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
