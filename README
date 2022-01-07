@@ -1,5 +1,4 @@
-dwm - dynamic window manager
-
+dwm - dynamic window manager suckless.org
 patches used:
 - dwm-activetagindicatorbar-6.2.diff
 - dwm-bar-height-6.2.diff
