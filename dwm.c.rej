@@ -1,10 +1,11 @@
 --- dwm.c
 +++ dwm.c
-@@ -200,6 +200,7 @@ static void sendmon(Client *c, Monitor *m);
- static void setclientstate(Client *c, long state);
- static void setfocus(Client *c);
- static void setfullscreen(Client *c, int fullscreen);
-+static void setlasttag(int tagbit);
- static void setlayout(const Arg *arg);
- static void setmfact(const Arg *arg);
- static void setup(void);
+@@ -699,7 +703,7 @@ dirtomon(int dir)
+ void
+ drawbar(Monitor *m)
+ {
+-	int x, w, sw = 0;
++	int x, w, wdelta, sw = 0;
+ 	int boxs = drw->fonts->h / 9;
+ 	int boxw = drw->fonts->h / 6 + 2;
+ 	unsigned int i, occ = 0, urg = 0;
