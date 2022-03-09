@@ -1,11 +1,22 @@
 --- dwm.c
 +++ dwm.c
-@@ -699,7 +703,7 @@ dirtomon(int dir)
- void
- drawbar(Monitor *m)
- {
--	int x, w, sw = 0;
-+	int x, w, wdelta, sw = 0;
- 	int boxs = drw->fonts->h / 9;
- 	int boxw = drw->fonts->h / 6 + 2;
- 	unsigned int i, occ = 0, urg = 0;
+@@ -1687,17 +1661,15 @@ tile(Monitor *m)
+ 		mw = m->ww;
+ 	for (i = my = ty = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
+ 		if (i < m->nmaster) {
+-			h = (m->wh - my) * (c->cfact / mfacts);
++			h = (m->wh - my) / (MIN(n, m->nmaster) - i);
+ 			resize(c, m->wx, m->wy + my, mw - (2*c->bw), h - (2*c->bw), 0);
+ 			if (my + HEIGHT(c) < m->wh)
+ 				my += HEIGHT(c);
+-     mfacts -= c->cfact;
+ 		} else {
+-			h = (m->wh - ty) * (c->cfact / sfacts);
++			h = (m->wh - ty) / (n - i);
+ 			resize(c, m->wx + mw, m->wy + ty, m->ww - mw - (2*c->bw), h - (2*c->bw), 0);
+ 			if (ty + HEIGHT(c) < m->wh)
+ 				ty += HEIGHT(c);
+-     sfacts -= c->cfact;
+ 		}
+ }
+ 
