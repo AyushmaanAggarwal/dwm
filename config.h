@@ -21,9 +21,9 @@ static const char *fonts[]          = { "Source Code Pro:size=20" };
 static const char dmenufont[]       = "Source Code Pro:size=20";
 static const char col_gray1[]       = "#000000"; 
 static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#98662d";
+static const char col_gray3[]       = "#eb6b66"; /*"#dfb180"; "#98662d";*/
 static const char col_gray4[]       = "#000000";
-static const char col_cyan[]        = "#98662d";
+static const char col_cyan[]        = "#eb6b66";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
