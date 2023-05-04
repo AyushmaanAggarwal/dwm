@@ -31,9 +31,8 @@ static const char *colors[][3]      = {
 };
 
 /* tagging  */
-static const char *tags[] = { "", "", "", "", "", "", "", " ", " " };
-static const char *tagsalt[] = { "", "", "1", "2", "3","", "", "", "" };
-/*static const char *tagsalt[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };*/
+static const char *tags[] = { "", "", "", "", " ", " ", " ", "", "" };
+static const char *tagsalt[] = { "", "", "", "", "", "", "", "", "" };
 static const int momentaryalttags = 0; /* 1 means alttags will show only when key is held down*/
 static const char *defaulttagapps[] = { "st", "firefox", "xournalpp", "zathura", "atom", "thunderbird", "spotifyd & st spt", NULL, NULL };
 
@@ -43,10 +42,12 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "LibreWolf",  NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "Xournalpp",NULL, NULL,	      1 << 2,	    0,           -1 },
-	{ "zathura",  NULL,       NULL,       1 << 3,       0,           -1 },
-	{ "Atom",     NULL,       NULL,       1 << 4,       0,           -1 },
+	{ "LibreWolf",  NULL,       NULL,       1 << 1,     0,           -1 },
+	{ "Xournalpp",	NULL,		NULL,	    1 << 2,		0,           -1 },
+	{ "obsidian",	NULL,		NULL,	    1 << 2,	    0,           -1 },
+	{ "Zathura",	NULL,       NULL,       1 << 3,     0,           -1 },
+	{ "Slack",		NULL,       NULL,       1 << 7,     0,           -1 },
+	{ "Spotify",	NULL,       NULL,       1 << 8,     0,           -1 },
 
 };
 
@@ -91,7 +92,7 @@ static Key keys[] = {
 	{ 0,                       XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-        { MODKEY,                       XK_s,      spawndefault,   {0} },
+    { MODKEY,                       XK_s,      spawndefault,   {0} },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
