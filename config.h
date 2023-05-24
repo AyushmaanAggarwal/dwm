@@ -31,7 +31,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging  */
-static const char *tags[] = { "", "", "", "", " ", " ", " ", "", "" };
+static const char *tags[] = { "", "", "", "", " ", " ", "", "", "" };
 static const char *tagsalt[] = { "", "", "", "", "", "", "", "", "" };
 static const int momentaryalttags = 0; /* 1 means alttags will show only when key is held down*/
 static const char *defaulttagapps[] = { "st", "firefox", "xournalpp", "zathura", "atom", "thunderbird", "spotifyd & st spt", NULL, NULL };
@@ -40,12 +40,13 @@ static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
-	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
+	 */ 
+	/* class      instance     title       tags mask   isfloating   monitor */
 	{ "LibreWolf",  NULL,       NULL,       1 << 1,     0,           -1 },
-	{ "Xournalpp",	NULL,		NULL,	    1 << 2,		0,           -1 },
+	{ "Xournalpp",	NULL,	    NULL,	1 << 2,	    0,           -1 },
 	{ "Zathura",	NULL,       NULL,       1 << 3,     0,           -1 },
-	{ "Slack",		NULL,       NULL,       1 << 7,     0,           -1 },
+	{ "Slack",	NULL,       NULL,       1 << 7,     0,           -1 },
+	{ "thunderbird",NULL,       NULL,       1 << 6,     0,           -1 },
 	{ "Spotify",	NULL,       NULL,       1 << 8,     0,           -1 },
 
 };
